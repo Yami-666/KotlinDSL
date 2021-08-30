@@ -1,13 +1,14 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    kotlin("android")
+    `android-kotlin-base`
 }
 
 android {
     compileSdk = 30
 
     defaultConfig {
-        applicationId = "com.example.fuckingapp"
+        applicationId = "com.example.awesomeapp"
         minSdk = 23
         targetSdk = 30
         versionCode = 1
@@ -19,46 +20,8 @@ android {
         }
     }
 
-    signingConfigs {
-        create("release") {
-            keyAlias = "MyKeyAlias"
-            keyPassword = "MyKeyPassword"
-            storeFile = file("Path/To/Key")
-            storePassword = "KeyStorePassword"
-        }
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("release")
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-            buildConfigField("String", "EXAMPLE", "\"release\"")
-        }
-        getByName("debug") {
-            applicationIdSuffix = ".debug"
-            buildConfigField("String", "EXAMPLE", "\"debug\"")
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.1"
-    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
 }
 

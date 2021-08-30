@@ -10,13 +10,6 @@ buildscript {
 }
 
 allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-subprojects {
     apply(plugin = "detekt-convention")
 
     repositories {
