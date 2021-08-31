@@ -1,4 +1,7 @@
+package accessors
+
 import com.android.build.gradle.BaseExtension
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 android {

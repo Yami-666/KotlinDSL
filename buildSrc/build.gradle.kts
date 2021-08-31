@@ -14,13 +14,13 @@ gradlePlugin {
     plugins {
         create("root-project") {
             id = "workplaces.root-project"
-            implementationClass = "RootProjectPlugin"
+            implementationClass = "plugins.RootProjectPlugin"
         }
     }
     plugins {
         create("sdk-version") {
             id = "workplaces.sdk-version"
-            implementationClass = "SdkVersionPlugin"
+            implementationClass = "plugins.SdkVersionPlugin"
         }
     }
 }
