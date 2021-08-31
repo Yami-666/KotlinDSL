@@ -1,18 +1,13 @@
 plugins {
     id("com.android.application")
+    id("workplaces.sdk-version")
     kotlin("android")
     `android-kotlin-base`
 }
 
 android {
-    compileSdk = 30
-
     defaultConfig {
         applicationId = "com.example.awesomeapp"
-        minSdk = 23
-        targetSdk = 30
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
