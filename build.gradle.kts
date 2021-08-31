@@ -10,7 +10,7 @@ buildscript {
 }
 
 allprojects {
-    apply(plugin = "plugins.workplaces.root-project")
+    apply(plugin = "workplaces.root-project")
     apply(plugin = "accessors.detekt-convention")
 
     repositories {
