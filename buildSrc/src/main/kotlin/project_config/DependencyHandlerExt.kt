@@ -9,18 +9,18 @@ fun DependencyHandler.dagger2() {
     kapt(Dependencies.dagger_android_processor)
 }
 
-fun DependencyHandler.core() {
+fun DependencyHandler.common() {
     implementation(Dependencies.std_lib)
     implementation(Dependencies.core_ktx)
 }
 
 fun DependencyHandler.compose() {
-    implementation (Dependencies.compose_ui)
-    implementation (Dependencies.compose_app_compat)
-    implementation (Dependencies.compose_tool_preview)
-    implementation (Dependencies.compose_activity)
-    androidTestImplementation (Dependencies.compose_junit_test)
-    debugImplementation (Dependencies.compose_ui_tooling)
+    implementation(Dependencies.compose_ui)
+    implementation(Dependencies.compose_app_compat)
+    implementation(Dependencies.compose_tool_preview)
+    implementation(Dependencies.compose_activity)
+    androidTestImplementation(Dependencies.compose_junit_test)
+    debugImplementation(Dependencies.compose_ui_tooling)
 }
 
 fun DependencyHandler.integrationTests() {
@@ -29,8 +29,45 @@ fun DependencyHandler.integrationTests() {
     androidTestImplementation(Dependencies.espresso_ui_test)
 }
 
+fun DependencyHandler.moshi() {
+    implementation(Dependencies.moshi)
+    kapt(Dependencies.moshi_codegen)
+}
+
 fun DependencyHandler.ktx() {
     implementation(Dependencies.lifecycle_ktx)
+    implementation(Dependencies.activity_ktx)
+    implementation(Dependencies.fragment_ktx)
+    implementation(Dependencies.room_ktx)
+}
+
+fun DependencyHandler.lifecycle() {
+    implementation(Dependencies.lifecycle_view_model)
+    implementation(Dependencies.lifecycle_saved_state)
+    kapt(Dependencies.lifecycle_compiler)
+    implementation(Dependencies.lifecycle_service)
+}
+
+fun DependencyHandler.navigation() {
+    implementation(Dependencies.navigation_runtime_ktx)
+    implementation(Dependencies.navigation_fragment_ktx)
+    implementation(Dependencies.navigation_ui_ktx)
+    androidTestImplementation(Dependencies.navigation_testing)
+    implementation(Dependencies.navigation_compose)
+//    implementation(Dependencies.navigation_safe_args)
+}
+
+fun DependencyHandler.retrofit2() {
+    implementation(Dependencies.retrofit2)
+    implementation(Dependencies.moshi_converter)
+}
+
+fun DependencyHandler.room() {
+    implementation(Dependencies.room_paging3)
+    annotationProcessor(Dependencies.room_processor)
+    kapt(Dependencies.room_runtime)
+    kapt(Dependencies.room_compiler)
+    testImplementation(Dependencies.room_testing)
 }
 
 private fun DependencyHandler.compileOnly(depName: String) {
@@ -59,4 +96,8 @@ private fun DependencyHandler.androidTestImplementation(depName: String) {
 
 private fun DependencyHandler.debugImplementation(depName: String) {
     add("debugImplementation", depName)
+}
+
+private fun DependencyHandler.annotationProcessor(depName: String) {
+    add("annotationProcessor", depName)
 }

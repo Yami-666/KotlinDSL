@@ -1,4 +1,4 @@
-package com.example.fuckingapp
+package com.example.awesomeapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.fuckingapp.ui.theme.FuckingAppTheme
+import com.example.awesomeapp.ui.theme.FuckingAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

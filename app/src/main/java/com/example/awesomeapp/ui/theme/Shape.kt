@@ -1,4 +1,4 @@
-package com.example.fuckingapp.ui.theme
+package com.example.awesomeapp.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

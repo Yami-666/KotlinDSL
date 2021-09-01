@@ -1,4 +1,4 @@
-package com.example.fuckingapp.ui.theme
+package com.example.awesomeapp.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

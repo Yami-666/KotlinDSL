@@ -1,4 +1,4 @@
-import project_config.core
+import project_config.common
 import project_config.dagger2
 
 plugins {
@@ -11,6 +11,8 @@ plugins {
 
 
 dependencies {
-    core()
+    implementation(project(":core"))
+
+    common()
     dagger2()
 }

@@ -19,9 +19,9 @@ abstract class WorkplacesExtensions {
     init {
         minSdk.convention(23)
             .finalizeValueOnRead()
-        targetSdk.convention(30)
+        targetSdk.convention(31)
             .finalizeValueOnRead()
-        compileSdk.convention(30)
+        compileSdk.convention(31)
             .finalizeValueOnRead()
     }
 }

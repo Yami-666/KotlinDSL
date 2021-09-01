@@ -1,5 +1,4 @@
-import project_config.core
-import project_config.dagger2
+import project_config.*
 
 plugins {
     id("com.android.library")
@@ -11,6 +10,11 @@ plugins {
 
 
 dependencies {
-    core()
+    implementation(project(":core"))
+
+    room()
+    moshi()
+    common()
     dagger2()
+    retrofit2()
 }
