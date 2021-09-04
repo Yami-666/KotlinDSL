@@ -1,6 +1,7 @@
+/*
 package com.example.awesomeapp.features
 
-import com.example.data.remote.servies.TestService
+import com.example.data.remote.news.models.servies.NewsService
 import dagger.Component
 import dagger.Module
 import javax.inject.Scope
@@ -14,8 +15,8 @@ interface TestComponent {}
 internal class TestModule {}
 
 interface TestDeps {
-    val testService: TestService
+    val newsService: NewsService
 }
 
 @Scope
-annotation class TestScope
+annotation class TestScope*/

@@ -12,6 +12,10 @@ fun DependencyHandler.dagger2() {
 fun DependencyHandler.common() {
     implementation(Dependencies.std_lib)
     implementation(Dependencies.core_ktx)
+    // For flow implementation
+    implementation(Dependencies.lifecycle_ktx)
+    implementation(Dependencies.kextensions)
+    implementation(Dependencies.timber)
 }
 
 fun DependencyHandler.compose() {

@@ -70,6 +70,9 @@ object Dependencies {
     const val junit_test = "junit:junit:${Versions.JUNIT}"
     const val junit_android_ext = "androidx.test.ext:junit:${Versions.JUNIT_ANDROID}"
     const val espresso_ui_test = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
+    const val kextensions = "com.github.nightgoat:kextensions:${Versions.KEX}"
+    const val timber = "com.jakewharton.timber:timber:${Versions.TIMBER}"
+
 
     const val test_instrumentation_runner = "androidx.test.runner.AndroidJUnitRunner"
     const val APP_ID = "com.example.awesomeapp"

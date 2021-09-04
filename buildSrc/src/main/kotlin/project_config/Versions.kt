@@ -29,6 +29,8 @@ object Versions {
     const val LIFECYCLE_KTX = "2.3.1"
     const val MOSHI = "1.12.0"
     const val COIL = "1.3.2"
+    const val KEX = "0.1.0"
+    const val TIMBER = "5.0.1"
 
     const val MIN_ANDROID_SDK = 23
     const val TARGET_ANDROID_SDK = 30
