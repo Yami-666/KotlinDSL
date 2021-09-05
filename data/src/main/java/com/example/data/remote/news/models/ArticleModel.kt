@@ -3,7 +3,9 @@ package com.example.data.remote.news.models
 import com.example.core.interfaces.mapper.IMapper
 import com.example.data.repository.news.data.ArticleData
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class ArticleModel(
     @Json(name = "source")
     val source: SourceModel?,

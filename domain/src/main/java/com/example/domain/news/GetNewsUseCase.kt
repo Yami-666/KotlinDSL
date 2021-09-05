@@ -7,7 +7,7 @@ import com.example.data.repository.news.INewsRepository
 import com.example.data.repository.news.data.NewsData
 import javax.inject.Inject
 
-internal class GetNewsUseCase @Inject constructor(
+class GetNewsUseCase @Inject constructor(
     private val newsRepository: INewsRepository
 ): IGetNewsUseCase {
     override fun invoke(): FlowResult<NewsData> {

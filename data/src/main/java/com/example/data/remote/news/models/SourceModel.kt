@@ -4,7 +4,9 @@ import com.example.core.extensions.loggE
 import com.example.core.interfaces.mapper.IMapper
 import com.example.data.repository.news.data.SourceData
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class SourceModel(
     @Json(name = "id")
     val id: String?,

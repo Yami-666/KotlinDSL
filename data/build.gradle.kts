@@ -8,6 +8,11 @@ plugins {
     accessors.`android-kotlin-base`
 }
 
+android {
+    defaultConfig {
+        buildConfigField(type = "String", name = "BASE_URL", value = "\"https://newsapi.org/\"")
+    }
+}
 
 dependencies {
     implementation(project(":core"))

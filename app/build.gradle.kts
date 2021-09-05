@@ -20,7 +20,6 @@ android {
         }
 
         buildConfigField(type = "String", name = "API_KEY", value = "\"687c52bb86874e9696f8b76e0cc179f7\"")
-        buildConfigField(type = "String", name = "BASE_URL", value = "https://newsapi.org/")
     }
 
     buildFeatures {

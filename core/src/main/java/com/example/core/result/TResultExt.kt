@@ -30,5 +30,11 @@ inline fun <reified T : IMapper.To<O>, reified O : Any> FlowResult<T>.mapFlowTo(
     }
 }
 
+inline fun <reified T : IMapper.To<O>, reified O : Any> TResult<T>.convertTo(): TResult<O> {
+    return if (this is TResult.Success) {
+        this.data.convert().toSuccessResult()
+    } else TResult.Error
+}
+
 inline fun <reified T : Any> Any.successResult(data: T): TResult<T> =
     TResult.Success(data)
