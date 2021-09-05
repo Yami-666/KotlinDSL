@@ -1,9 +1,12 @@
 package com.example.awesomeapp.di.component
 
 import android.app.Application
-import com.example.awesomeapp.di.scopes.AppScope
 import com.example.awesomeapp.di.NewsApiQualifier
-import com.example.awesomeapp.di.modules.*
+import com.example.awesomeapp.di.modules.DataSourceModule
+import com.example.awesomeapp.di.modules.NetworkModule
+import com.example.awesomeapp.di.modules.NewsDomainModule
+import com.example.awesomeapp.di.modules.RepositoryModule
+import com.example.awesomeapp.di.scopes.AppScope
 import com.example.awesomeapp.features.NewsViewModel
 import com.example.domain.news.IGetNewsUseCase
 import dagger.BindsInstance
@@ -15,7 +18,6 @@ import dagger.Component
         DataSourceModule::class,
         RepositoryModule::class,
         NewsDomainModule::class,
-        ViewModelModule::class
     ]
 )
 @AppScope

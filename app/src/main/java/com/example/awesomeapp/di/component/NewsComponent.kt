@@ -22,13 +22,11 @@ interface NewsComponent {
         fun build(): NewsComponent
     }
 
-    fun inject(activity: MainActivity)
+    fun inject(it: MainActivity)
 }
 
 @Module
-class NewsModule {
-
-}
+class NewsModule
 
 interface NewsDependencyProvider {
     val newsDependency: NewsDependency
