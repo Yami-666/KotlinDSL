@@ -1,6 +1,6 @@
 package com.example.awesomeapp.di.modules
 
-import com.example.awesomeapp.di.NewsApiQualifier
+import com.example.awesomeapp.di.qualifier.NewsApiQualifier
 import com.example.awesomeapp.di.scopes.AppScope
 import com.example.data.remote.news.servies.NewsService
 import dagger.Module

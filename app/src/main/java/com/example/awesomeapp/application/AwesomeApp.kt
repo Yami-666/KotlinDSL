@@ -1,3 +1,5 @@
+@file:Suppress("UNUSED")
+
 package com.example.awesomeapp.application
 
 import android.app.Application
@@ -8,7 +10,7 @@ import com.example.awesomeapp.di.component.NewsDependencyProvider
 import com.example.fuckingapp.BuildConfig
 
 class AwesomeApp : Application(), NewsDependencyProvider {
-    val appComponent: AppComponent by lazy {
+    private val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()
             .application(this)
             .apiKey(BuildConfig.API_KEY)

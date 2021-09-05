@@ -1,4 +1,4 @@
-package com.example.awesomeapp.di
+package com.example.awesomeapp.di.qualifier
 
 import javax.inject.Qualifier
 

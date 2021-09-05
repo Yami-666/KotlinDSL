@@ -1,7 +1,7 @@
 package com.example.awesomeapp.di.component
 
 import android.app.Application
-import com.example.awesomeapp.di.NewsApiQualifier
+import com.example.awesomeapp.di.qualifier.NewsApiQualifier
 import com.example.awesomeapp.di.modules.DataSourceModule
 import com.example.awesomeapp.di.modules.NetworkModule
 import com.example.awesomeapp.di.modules.NewsDomainModule
