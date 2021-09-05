@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.core.base.BaseViewModel
 import com.example.core.extensions.unsafeLazy
-import com.example.data.repository.news.data.NewsData
+import com.example.data.repository.news.data.ArticleData
 import com.example.domain.news.IGetNewsUseCase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 import javax.inject.Provider
@@ -18,12 +20,15 @@ class NewsViewModel(
     private val _isLoading = MutableStateFlow(false)
     val isLoading = _isLoading.asStateFlow()
 
-    val news: SharedFlow<NewsData> by unsafeLazy {
+    val news: StateFlow<List<ArticleData>> by unsafeLazy {
         getNewsUseCase()
-            .onStart { showLoading() }
-            .mapNotNull { it.data }
+            .onStart {
+                showLoading()
+                delay(1000L)
+            }
+            .mapNotNull { it.data?.articles }
             .onCompletion { hideLoading() }
-            .shareIn(viewModelScope, SharingStarted.Lazily, replay = 1)
+            .toStateFlow(viewModelScope) { emptyList() }
     }
 
     private fun showLoading() {
@@ -45,3 +50,14 @@ class NewsViewModel(
     }
 }
 
+inline fun <reified T> Flow<T>.toStateFlow(
+    scope: CoroutineScope,
+    started: SharingStarted = SharingStarted.Lazily,
+    initialValue: () -> T,
+): StateFlow<T> {
+    return this.stateIn(
+        scope = scope,
+        started = started,
+        initialValue = initialValue.invoke()
+    )
+}

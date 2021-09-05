@@ -33,7 +33,6 @@ class MainActivity : ComponentActivity() {
             FuckingAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
                     TestScreen().TestScreen(newsViewModel)
                 }
             }
