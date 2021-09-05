@@ -1,16 +1,16 @@
 package com.example.awesomeapp.di.modules
 
-import com.example.awesomeapp.di.qualifier.NewsApiQualifier
-import com.example.awesomeapp.di.scopes.AppScope
 import com.example.data.remote.news.servies.NewsService
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
     @Provides
-    @AppScope
-    fun provideNewsService(@NewsApiQualifier apiKey: String): NewsService {
-        return NewsService(apiKey)
+    fun provideNewsService(): NewsService {
+        return NewsService()
     }
 }

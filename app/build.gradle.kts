@@ -6,6 +6,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
     id("workplaces.sdk-version")
     accessors.`android-kotlin-base`
 }
@@ -18,12 +19,14 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-
-        buildConfigField(type = "String", name = "API_KEY", value = "\"687c52bb86874e9696f8b76e0cc179f7\"")
     }
 
     buildFeatures {
         compose = true
+    }
+
+    kapt {
+        correctErrorTypes = true
     }
 }
 
@@ -39,6 +42,7 @@ dependencies {
     implementation(Dependencies.constraint_layout)
 
     ktx()
+    hilt()
     common()
     compose()
     dagger2()

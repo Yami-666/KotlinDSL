@@ -9,6 +9,11 @@ fun DependencyHandler.dagger2() {
     kapt(Dependencies.dagger_android_processor)
 }
 
+fun DependencyHandler.hilt() {
+    implementation(Dependencies.hilt)
+    kapt(Dependencies.hilt_compiler)
+}
+
 fun DependencyHandler.common() {
     implementation(Dependencies.std_lib)
     implementation(Dependencies.core_ktx)

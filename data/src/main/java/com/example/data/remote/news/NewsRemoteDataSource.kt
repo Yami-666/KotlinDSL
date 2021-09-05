@@ -20,8 +20,4 @@ class NewsRemoteDataSource @Inject constructor(
         logg { response.toString() }
         response.toSuccessResult()
     }
-
-    override fun getNews(id: String): FlowResult<NewsModel> {
-        return newsApi.getNews(id).toFlowSuccessResult()
-    }
 }

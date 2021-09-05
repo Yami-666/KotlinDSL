@@ -33,6 +33,10 @@ object Dependencies {
     const val dagger_android = "com.google.dagger:dagger-android-support:${Versions.DAGGER2}"
     const val dagger_android_processor = "com.google.dagger:dagger-android-processor:${Versions.DAGGER2}"
 
+    // Hilt
+    const val hilt = "com.google.dagger:hilt-android:${Versions.DAGGER2}"
+    const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER2}"
+
     // ktx
     const val lifecycle_ktx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_KTX}"
     const val core_ktx = "androidx.core:core-ktx:${Versions.CORE_KTX}"

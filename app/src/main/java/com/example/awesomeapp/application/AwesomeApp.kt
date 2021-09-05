@@ -1,21 +1,7 @@
-@file:Suppress("UNUSED")
-
 package com.example.awesomeapp.application
 
 import android.app.Application
-import com.example.awesomeapp.di.component.AppComponent
-import com.example.awesomeapp.di.component.DaggerAppComponent
-import com.example.awesomeapp.di.component.NewsDependency
-import com.example.awesomeapp.di.component.NewsDependencyProvider
-import com.example.fuckingapp.BuildConfig
+import dagger.hilt.android.HiltAndroidApp
 
-class AwesomeApp : Application(), NewsDependencyProvider {
-    private val appComponent: AppComponent by lazy {
-        DaggerAppComponent.builder()
-            .application(this)
-            .apiKey(BuildConfig.API_KEY)
-            .build()
-    }
-    override val newsDependency: NewsDependency
-        get() = appComponent
-}
+@HiltAndroidApp
+class AwesomeApp : Application()

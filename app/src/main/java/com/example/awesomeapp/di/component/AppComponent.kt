@@ -1,40 +1,19 @@
 package com.example.awesomeapp.di.component
 
-import android.app.Application
-import com.example.awesomeapp.di.qualifier.NewsApiQualifier
-import com.example.awesomeapp.di.modules.DataSourceModule
+import com.example.awesomeapp.di.modules.DomainModule
 import com.example.awesomeapp.di.modules.NetworkModule
-import com.example.awesomeapp.di.modules.NewsDomainModule
 import com.example.awesomeapp.di.modules.RepositoryModule
-import com.example.awesomeapp.di.scopes.AppScope
-import com.example.awesomeapp.features.NewsViewModel
-import com.example.domain.news.IGetNewsUseCase
-import dagger.BindsInstance
+import com.example.awesomeapp.di.modules.sources.LocalDataSourceModule
+import com.example.awesomeapp.di.modules.sources.RemoteDataSourceModule
 import dagger.Component
 
 @Component(
     modules = [
         NetworkModule::class,
-        DataSourceModule::class,
+        RemoteDataSourceModule::class,
+        LocalDataSourceModule::class,
         RepositoryModule::class,
-        NewsDomainModule::class,
+        DomainModule::class,
     ]
 )
-@AppScope
-interface AppComponent : NewsDependency {
-
-    override val getNewsUseCase: IGetNewsUseCase
-
-    @Component.Builder
-    interface Builder {
-        @BindsInstance
-        fun application(application: Application): Builder
-
-        @BindsInstance
-        fun apiKey(@NewsApiQualifier apiKey: String): Builder
-
-        fun build(): AppComponent
-    }
-
-    fun inject(it: NewsViewModel)
-}
+interface AppComponent
