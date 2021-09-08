@@ -7,7 +7,8 @@ buildscript {
         classpath(project_config.Dependencies.gradle_tools_plugin)
         classpath(project_config.Dependencies.kotlin_gradle_plugin)
         classpath(project_config.Dependencies.navigation_safe_args)
-        classpath ("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
+        classpath(project_config.Dependencies.hilt_plugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30")
     }
 }
 

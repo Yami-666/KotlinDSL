@@ -36,6 +36,7 @@ object Dependencies {
     // Hilt
     const val hilt = "com.google.dagger:hilt-android:${Versions.DAGGER2}"
     const val hilt_compiler = "com.google.dagger:hilt-android-compiler:${Versions.DAGGER2}"
+    const val hilt_plugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.DAGGER2}"
 
     // ktx
     const val lifecycle_ktx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_KTX}"
@@ -76,6 +77,7 @@ object Dependencies {
     const val espresso_ui_test = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
     const val kextensions = "com.github.nightgoat:kextensions:${Versions.KEX}"
     const val timber = "com.jakewharton.timber:timber:${Versions.TIMBER}"
+    const val fragment = "androidx.fragment:fragment:${Versions.FRAGMENT_KTX}"
 
 
     const val test_instrumentation_runner = "androidx.test.runner.AndroidJUnitRunner"

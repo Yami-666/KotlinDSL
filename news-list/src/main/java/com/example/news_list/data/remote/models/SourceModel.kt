@@ -1,0 +1,28 @@
+package com.example.news_list.data.remote.models
+
+import com.example.core.extensions.loggE
+import com.example.core.interfaces.mapper.IMapper
+import com.example.news_list.domain.data.SourceData
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class SourceModel(
+    @Json(name = "id")
+    val id: String?,
+    @Json(name = "name")
+    val name: String?,
+) : IMapper.To<SourceData> {
+    override fun convertTo(): SourceData? {
+        return if (id != null && name != null) {
+            SourceData(
+                id = id,
+                name = name,
+            )
+        } else {
+            loggE { "SourceModel.convertTo(): id = $id or name = $name are null" }
+            null
+        }
+    }
+}
+
