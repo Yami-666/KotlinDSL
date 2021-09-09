@@ -78,6 +78,7 @@ object Dependencies {
     const val kextensions = "com.github.nightgoat:kextensions:${Versions.KEX}"
     const val timber = "com.jakewharton.timber:timber:${Versions.TIMBER}"
     const val fragment = "androidx.fragment:fragment:${Versions.FRAGMENT_KTX}"
+    const val view_binding_delegate = "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${Versions.VIEW_BINDING_DELEGATE}"
 
 
     const val test_instrumentation_runner = "androidx.test.runner.AndroidJUnitRunner"

@@ -14,8 +14,11 @@ abstract class BaseFragment(layoutId: Int) : Fragment(layoutId) {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        context.appComponent.inject(this)
-        viewModelFactory = context.appComponent.factory
+
+        context.appComponent.apply {
+            inject(newsFragment = this@BaseFragment)
+            viewModelFactory = factory
+        }
     }
 }
 

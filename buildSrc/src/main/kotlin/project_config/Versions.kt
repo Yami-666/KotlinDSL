@@ -12,6 +12,7 @@ object Versions {
     const val PLAY_MARKET_KTX = "1.8.1"
     const val WORK_MANAGER_KTX = "2.5.0"
     const val FRAGMENT_KTX = "1.3.6"
+    const val VIEW_BINDING_DELEGATE = "1.5.0-beta01"
     const val GRADLE = "7.0.1"
     const val KOTLIN = "1.5.30"
     const val LIFECYCLE = "2.4.0-alpha03"

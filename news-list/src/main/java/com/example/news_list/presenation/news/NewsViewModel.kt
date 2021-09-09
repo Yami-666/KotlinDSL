@@ -7,7 +7,6 @@ import com.example.core.extensions.unsafeLazy
 import com.example.news_list.domain.IGetNewsUseCase
 import com.example.news_list.domain.data.ArticleData
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
@@ -17,11 +16,7 @@ class NewsViewModel @Inject constructor(
 
     val news: StateFlow<List<ArticleData>> by unsafeLazy {
         getNewsUseCase()
-            .onStart {
-                showLoading()
-                // For testing loading bar
-                delay(1000L)
-            }
+            .onStart { showLoading() }
             .mapNotNull { it.data?.articles }
             .onCompletion { hideLoading() }
             .flowOn(Dispatchers.IO)
